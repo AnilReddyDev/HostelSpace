@@ -15,8 +15,11 @@ export default {
         primaryGray:"878787",
       },
       height:{
-        h5:"5%",
-        h95:"95%"
+        h7:"7vh",
+        h93:"93vh"
+      },
+      minWidth:{
+        mw70:"70%"
       }
 
     },
