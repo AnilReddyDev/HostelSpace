@@ -1,5 +1,6 @@
 import React from 'react'
 import homelogo from '../assets/HostelSpace-logo.svg'
+import { Link } from 'react-router-dom'
 function Login() {
   return (
     <div className='w-full h-h93 bg-primaryWhite montserrat-custom flex justify-center items-center'>
@@ -9,10 +10,10 @@ function Login() {
             <input type="email" name="email" className=' w-72 h-10 px-4 rounded-md outline outline-mildViolet  focus:outline-primaryViolet outline-1' placeholder='email'/>
             <input type="password" name="password" className=' w-72 h-10 px-4 rounded-md outline outline-mildViolet  focus:outline-primaryViolet outline-1' placeholder='password'/>
             <div className='w-72 -my-1 flex justify-end'>
-                <p className='text-primaryViolet text-sm cursor-pointer'>forgot password</p>
+                <Link className='text-primaryViolet text-sm cursor-pointer'>forgot password</Link>
             </div>
             <button type="button" className='w-72 flex h-10 rounded-full justify-center items-center text-white bg-primaryViolet font-medium'>Sign In</button>
-            <p className='text-sm'>New user? <span className=' text-primaryViolet font-semibold cursor-pointer'>Create an account</span></p>
+            <p className='text-sm'>New user? <Link className=' text-primaryViolet font-semibold cursor-pointer' to="/signup">Create an account</Link></p>
         </form>
     </div>
   )

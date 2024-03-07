@@ -5,6 +5,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import HomeNext from './Pages/HomeNext'
 import Login from './Pages/Login'
 import Register from './Pages/Register'
+import RegisterHostel from './Pages/RegisterHostel'
+import Profile from './Pages/Profile'
+import ExactHostel from './Pages/ExactHostel'
 function App() {
   return (
     <>
@@ -13,8 +16,11 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/home' element={<HomeNext/>} />
-          <Route path='/login' element={<Login/>} />
-          <Route path='/register' element={<Register/>} />
+          <Route path='/signin' element={<Login/>} />
+          <Route path='/signup' element={<Register/>} />
+          <Route path='/profile' element={<Profile/>} />
+          <Route path='/registerHostel' element={<RegisterHostel/>} />
+          <Route path='/hostels' element={<ExactHostel/>} />
         </Routes>
       </BrowserRouter>
     </>

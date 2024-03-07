@@ -1,6 +1,8 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { STATUSES } from '../features/HostelSlice';
+import { Link } from 'react-router-dom';
+import FilterComp from './FilterComp';
 function HostelCards() {
   const { data: HostelCards, status, filter } = useSelector(state => state.hostel);
   if(status === STATUSES.LOADING){
@@ -10,9 +12,13 @@ function HostelCards() {
     return <p className=' text-2xl text-primaryViolet'><span className=' text-red-600'>Error!</span> Something went wrong</p>
   }
   return (
-    <div className='w-full  flex flex-col items-center'>
+    <div className='w-full grid  grid-cols-12 bg-orange-400 justify-center'>
+      <div className=' col-span-3 sticky top-5 h-96 border-2 border-black'>
+    <FilterComp/>
+      </div>
+      <div className=' col-span-9 bg-yellow-400 flex flex-col items-center'>
       {HostelCards.map(hostel => (
-        <div key={hostel.id} className=' bg-white  shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-2xl montserrat-custom  gap-10 overflow-hidden m-2 w-4/5   grid grid-cols-12'>
+        <Link  to={`/hostels?id=${hostel.id}`} key={hostel.id} className='border-4 border-primaryWhite hover:border-primaryViolet bg-white  shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-2xl montserrat-custom  gap-10 overflow-hidden m-2 w-4/5   grid grid-cols-12'>
           <div className=' col-span-2  h-full flex justify-center items-center'>
             <img src={hostel.image} alt="img" className=' px-4 py-4 rounded-xl' />
           </div>
@@ -30,8 +36,9 @@ function HostelCards() {
 
             </p>
           </div>
-        </div>
+        </Link>
       ))}
+      </div>
     </div>
   )
 }
