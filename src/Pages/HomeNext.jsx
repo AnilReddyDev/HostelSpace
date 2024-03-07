@@ -4,7 +4,7 @@ import HostelCards from '../Component/HostelCards'
 
 function HomeNext() {
   return (
-    <div className='w-full h-h93 bg-primaryWhite flex flex-col items-center'> 
+    <div className='w-full  bg-primaryWhite flex flex-col items-center'> 
         <SearchComp/>
         <HostelCards/>
     </div>
